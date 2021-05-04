@@ -1,0 +1,5 @@
+<ul class="list-group">
+  <li *ngFor="let accountant of accountants">
+    {{accountant.id}}: <a routerLink="{{getAccountantDetailsRoute(accountant.id)}}">{{accountant.name}}</a>
+  </li>
+</ul>

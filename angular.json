@@ -1,9 +1,9 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "cats-web": {
+    "accountants-web": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/cats-web",
+            "outputPath": "dist/accountants-web",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "cats-web:build"
+            "browserTarget": "accountants-web:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "cats-web:build:production"
+              "browserTarget": "accountants-web:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "cats-web:build"
+            "browserTarget": "accountants-web:build"
           }
         },
         "test": {
@@ -110,15 +110,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "cats-web:serve"
+            "devServerTarget": "accountants-web:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "cats-web:serve:production"
+              "devServerTarget": "accountants-web:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "cats-web"
+  "defaultProject": "accountants-web"
 }
