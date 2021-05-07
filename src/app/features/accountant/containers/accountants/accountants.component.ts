@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {Accountant} from '../../../../interface/accountant';
 import {RoutesConstant} from '../../../../constants/routes-constant';
 
@@ -14,6 +14,7 @@ export class AccountantsComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
+    private router: Router,
   ) {
   }
 
@@ -29,4 +30,7 @@ export class AccountantsComponent implements OnInit {
     return `/${RoutesConstant.ACCOUNTANTS_ROUTE}/${id}`;
   }
 
+  openAddAccountant() {
+    this.router.navigateByUrl(`/${RoutesConstant.ACCOUNTANTS_NEW}`);
+  }
 }

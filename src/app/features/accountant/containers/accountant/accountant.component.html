@@ -1,1 +1,5 @@
-<app-accountant-details [model]="accountant" [backRoute]="backRoute"></app-accountant-details>
+<app-accountant-details [model]="accountant"
+                        [backRoute]="backRoute"
+                        (editAccountant)="onEditAccountant($event)"
+                        (deleteAccountant)="onDeleteAccountant($event)"
+></app-accountant-details>

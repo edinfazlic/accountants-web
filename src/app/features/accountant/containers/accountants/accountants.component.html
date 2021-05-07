@@ -1,2 +1,4 @@
 <app-accountants-list [accountants]="accountants"
-                      [getAccountantDetailsRoute]="accountantDetails"></app-accountants-list>
+                      [getAccountantDetailsRoute]="accountantDetails"
+                      (addButtonClicked)="openAddAccountant()"
+></app-accountants-list>

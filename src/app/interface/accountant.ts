@@ -1,5 +1,5 @@
 export interface Accountant {
-  id: number;
+  id?: number;
   name: string;
   employed: boolean;
 }

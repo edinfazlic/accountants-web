@@ -1,17 +1,17 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {Accountant} from '../../../../interface/accountant';
 import {RoutesConstant} from '../../../../constants/routes-constant';
+import {Accountant} from '../../../../interface/accountant';
 import {AccountantService} from '../../../../service/accountant.service';
 
 @Component({
-  selector: 'app-accountant',
-  templateUrl: './accountant.component.html',
-  styleUrls: ['./accountant.component.css']
+  selector: 'app-accountant-edit',
+  templateUrl: './accountant-edit.component.html',
+  styleUrls: ['./accountant-edit.component.css']
 })
-export class AccountantComponent implements OnInit {
+export class AccountantEditComponent implements OnInit {
 
-  backRoute = `/${RoutesConstant.ACCOUNTANTS_LIST}`;
+  backRoute;
 
   accountant: Accountant;
 
@@ -28,14 +28,11 @@ export class AccountantComponent implements OnInit {
 
   loadAccountant = (routeData: { accountant: Accountant }) => {
     this.accountant = routeData.accountant;
+    this.backRoute = `/${RoutesConstant.ACCOUNTANTS_DETAILS_BASE}/${this.accountant.id}`;
   }
 
-  onEditAccountant = (id: number): void => {
-    this.router.navigateByUrl(`/${RoutesConstant.ACCOUNTANTS_EDIT_BASE}/${id}`);
-  }
-
-  onDeleteAccountant = (id: number): void => {
-    this.accountantService.deleteAccountant(id).subscribe(() => {
+  updateAccountant(accountant: Accountant) {
+    this.accountantService.updateAccountant(this.accountant.id, accountant).subscribe(() => {
       this.router.navigateByUrl(`/${RoutesConstant.ACCOUNTANTS_LIST}`);
     });
   }

@@ -1,5 +1,8 @@
+<button type="button" class="btn btn-primary add-button"
+        (click)="addButtonClicked.emit()">Add Accountant</button>
+
 <ul class="list-group">
   <li *ngFor="let accountant of accountants">
-    {{accountant.id}}: <a routerLink="{{getAccountantDetailsRoute(accountant.id)}}">{{accountant.name}}</a>
+    <a routerLink="{{getAccountantDetailsRoute(accountant.id)}}">{{accountant.id}}: {{accountant.name}}</a>
   </li>
 </ul>

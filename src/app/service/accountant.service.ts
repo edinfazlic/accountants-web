@@ -19,4 +19,16 @@ export class AccountantService {
   getSingle(id: number): Observable<Accountant> {
     return this.http.get<Accountant>(`${this.accountantsApi}/${id}`);
   }
+
+  deleteAccountant(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.accountantsApi}/${id}`);
+  }
+
+  createAccountant(accountant: Accountant): Observable<Accountant> {
+    return this.http.post<Accountant>(`${this.accountantsApi}`, accountant);
+  }
+
+  updateAccountant(id: number, accountant: Accountant): Observable<Accountant> {
+    return this.http.put<Accountant>(`${this.accountantsApi}/${id}`, accountant);
+  }
 }

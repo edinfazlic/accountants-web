@@ -1,0 +1,12 @@
+<button type="button" class="btn btn-outline-secondary"
+        routerLink="{{backRoute}}">Back</button>
+
+<form (submit)="handleFormSubmit()"
+      [formGroup]="form">
+
+  <input type="text" formControlName="name">
+
+  <input type="checkbox" formControlName="employed">
+
+  <button type="submit">Submit</button>
+</form>

@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Accountant} from '../../../../interface/accountant';
 
 @Component({
@@ -13,5 +13,19 @@ export class AccountantDetailsComponent {
 
   @Input()
   backRoute: string;
+
+  @Output()
+  editAccountant: EventEmitter<number> = new EventEmitter<number>();
+
+  @Output()
+  deleteAccountant: EventEmitter<number> = new EventEmitter<number>();
+
+  edit() {
+    this.editAccountant.emit(this.model.id);
+  }
+
+  delete() {
+    this.deleteAccountant.emit(this.model.id);
+  }
 
 }

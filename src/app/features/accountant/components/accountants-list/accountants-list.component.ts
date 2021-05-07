@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {Accountant} from '../../../../interface/accountant';
 
 @Component({
@@ -13,5 +13,8 @@ export class AccountantsListComponent {
 
   @Input()
   getAccountantDetailsRoute: (id: number) => string;
+
+  @Output()
+  addButtonClicked: EventEmitter<void> = new EventEmitter<void>();
 
 }
